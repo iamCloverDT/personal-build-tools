@@ -15,7 +15,7 @@ rm -rf out/target
 . build/env*
 
 export BUILD_USERNAME=chara
-export TZ=America/Petrolina
+export TZ=America/Recife
 
 axion guam userdebug vanilla
 ax -br
