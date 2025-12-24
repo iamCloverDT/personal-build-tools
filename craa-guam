@@ -16,6 +16,10 @@ rm -rf out/target
 
 export BUILD_USERNAME=chara
 export TZ=America/Recife
-
+cd kernel/motorola/sm6225
+rm -rf KernelSU-Next
+rm -rf drivers/kernelsu
+curl -LSs "https://raw.githubusercontent.com/KernelSU-Next/KernelSU-Next/next/kernel/setup.sh" | bash -s legacy
+cd ../../..
 axion guam userdebug vanilla
 ax -br
