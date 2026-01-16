@@ -4,7 +4,7 @@ repo init -u https://github.com/Lunaris-AOSP/android -b 16 --git-lfs
 /opt/crave/resync.sh
 
 git clone https://github.com/CharaDreemurrDT/android_device_xiaomi_tanzanite -b lunaris device/xiaomi/tanzanite
-git clone https://github.com/CharaDreemurrDT/android_device_xiaomi_tanzanite-kernel -b grayraven device/xiaomi/tanzanite-kernel
+git clone https://github.com/nathanzerogarage/android_device_xiaomi_tanzanite-kernel -b ksu device/xiaomi/tanzanite-kernel
 git clone https://github.com/nathanzerogarage/proprietary_vendor_xiaomi_tanzanite -b lineage-23.1 vendor/xiaomi/tanzanite
 git clone https://github.com/TogoFire/packages_apps_ViPER4AndroidFX.git -b v4a packages/apps/ViPER4AndroidFX
 git clone https://github.com/nathanzerogarage/android_hardware_xiaomi -b lineage-23.1 hardware/xiaomi
