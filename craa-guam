@@ -20,5 +20,5 @@ rm -rf KernelSU-Next
 rm -rf drivers/kernelsu
 curl -LSs "https://raw.githubusercontent.com/StarlightKernel/KSUN-SUSFS/refs/heads/legacy/kernel/setup.sh" | bash -s legacy
 cd ../../..
-axion guam userdebug vanilla
+axion guam va
 ax -br
