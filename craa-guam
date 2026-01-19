@@ -14,7 +14,6 @@ rm -rf out/target
 
 . build/env*
 
-export BUILD_USERNAME=chara
 export TZ=America/Recife
 cd kernel/motorola/sm6225
 rm -rf KernelSU-Next
