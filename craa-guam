@@ -5,7 +5,7 @@ repo init -u https://github.com/AxionAOSP/android.git -b lineage-23.1 --git-lfs
 
 git clone https://github.com/CharaDreemurrDT/axionaosp_device_motorola_guam.git -b axion16 device/motorola/guam
 git clone https://github.com/LineageOS/android_device_motorola_sm6225-common.git -b lineage-23.1 device/motorola/sm6225-common
-git clone https://github.com/StarlightKernel/StarlightKernelMotorolaSm6225.git kernel/motorola/sm6225 -b axionaosp
+git clone https://github.com/StarlightKernel/starlight-motoSM6225.git kernel/motorola/sm6225 -b axionaosp
 git clone https://github.com/TheMuppets/proprietary_vendor_motorola_sm6225-common.git -b lineage-23.1 vendor/motorola/sm6225-common
 git clone https://github.com/TheMuppets/proprietary_vendor_motorola_guam.git -b lineage-23.1 vendor/motorola/guam
 git clone https://github.com/LineageOS/android_hardware_motorola.git -b lineage-23.1 hardware/motorola
