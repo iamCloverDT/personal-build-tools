@@ -15,5 +15,5 @@ rm -rf out/target
 . build/env*
 
 export TZ=America/Recife
-lunch lineage_guam-bp1a-userdebug
+lunch lineage_guam-bp3a-userdebug
 mka bacon
