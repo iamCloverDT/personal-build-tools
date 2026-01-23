@@ -1,9 +1,9 @@
 #!/bin/bash
 
-repo init -u https://github.com/Lunaris-AOSP/android -b 16 --git-lfs
+repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --git-lfs --no-clone-bundle
 /opt/crave/resync.sh
 
-git clone https://github.com/CharaDreemurrDT/android_device_xiaomi_tanzanite -b lunaris device/xiaomi/tanzanite
+git clone https://github.com/nathanzerogarage/android_device_xiaomi_tanzanite -b lineage-23.1 device/xiaomi/tanzanite
 git clone https://github.com/nathanzerogarage/android_device_xiaomi_tanzanite-kernel -b ksu device/xiaomi/tanzanite-kernel
 git clone https://github.com/nathanzerogarage/proprietary_vendor_xiaomi_tanzanite -b lineage-23.1 vendor/xiaomi/tanzanite
 git clone https://github.com/TogoFire/packages_apps_ViPER4AndroidFX.git -b v4a packages/apps/ViPER4AndroidFX
@@ -19,5 +19,4 @@ rm -rf out/target
 export BUILD_USERNAME=chara
 export TZ=America/Recife
 
-lunch lineage_tanzanite-bp2a-user
-m lunaris
+brunch tanzanite userdebug
