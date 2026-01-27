@@ -1,6 +1,6 @@
 #!/bin/bash
 
-repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --git-lfs --no-clone-bundle
+repo init -u https://github.com/crdroidandroid/android.git -b 16.0-qpr1 --git-lfs --no-clone-bundle
 /opt/crave/resync.sh
 
 git clone https://github.com/nathanzerogarage/android_device_xiaomi_tanzanite -b lineage-23.1 device/xiaomi/tanzanite
