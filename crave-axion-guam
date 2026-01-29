@@ -1,0 +1,21 @@
+#!/bin/bash
+
+repo init -u https://github.com/AxionAOSP/android.git -b lineage-23.1 --git-lfs
+/opt/crave/resync.sh
+
+git clone https://github.com/iamCloverDT/android_device_motorola_guam.git -b axion16.1 device/motorola/guam
+git clone https://github.com/Tomoms/android_device_motorola_sm6225-common.git -b 16.1 device/motorola/sm6225-common
+git clone https://github.com/StarlightKernel/starlight-motoSM6225.git -b lineage-23.1-rom-build kernel/motorola/sm6225
+git clone https://github.com/TheMuppets/proprietary_vendor_motorola_sm6225-common.git -b lineage-23.1 vendor/motorola/sm6225-common
+git clone https://github.com/TheMuppets/proprietary_vendor_motorola_guam.git -b lineage-23.1 vendor/motorola/guam
+git clone https://github.com/LineageOS/android_hardware_motorola.git -b lineage-23.1 hardware/motorola
+
+rm -rf out/target
+
+. build/env*
+
+export BUILD_USERNAME=clover
+export TZ=America/Recife
+
+axion guam va
+ax br -j$(nproc --all)
