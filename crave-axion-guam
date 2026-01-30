@@ -25,4 +25,4 @@ export BUILD_USERNAME=clover
 export TZ=America/Recife
 
 axion guam userdebug vanilla
-ax br -j$(nproc --all)
+ax br
