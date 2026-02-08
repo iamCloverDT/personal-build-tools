@@ -33,6 +33,7 @@ cd ../..
 cd packages/apps/Aperture
 wget https://raw.githubusercontent.com/nathanzerogarage/patches/refs/heads/main/01-aperture-mtk-hfps-mode.patch
 patch -p1 < 01-aperture-mtk-hfps-mode.patch
+cd ../../..
 
 rm -rf out/target
 
