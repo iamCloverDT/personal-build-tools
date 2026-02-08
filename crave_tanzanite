@@ -21,6 +21,19 @@ git clone https://github.com/nathanzerogarage/android_hardware_mediatek -b linea
 git clone https://github.com/nathanzerogarage/android_device_mediatek_sepolicy_vndr -b lineage-23.2 device/mediatek/sepolicy_vndr
 git clone https://github.com/MillenniumOSS/android_vendor_mediatek_ims.git -b sixteen-qpr2 vendor/mediatek/ims
 
+wget https://raw.githubusercontent.com/iamCloverDT/crDroid-build-signed-script/refs/heads/16.0/create-signed-env.sh
+chmod +x create-signed-env.sh
+./create-signed-env.sh
+
+cd external/wpa_supplicant_8
+wget https://raw.githubusercontent.com/nathanzerogarage/patches/refs/heads/main/do_not_set_NL80211_WPA_VERSION_3.patch
+patch -p1 < do_not_set_NL80211_WPA_VERSION_3.patch
+
+cd ../..
+cd packages/apps/Aperture
+wget https://raw.githubusercontent.com/nathanzerogarage/patches/refs/heads/main/01-aperture-mtk-hfps-mode.patch
+patch -p1 < 01-aperture-mtk-hfps-mode.patch
+
 rm -rf out/target
 
 . build/env*
