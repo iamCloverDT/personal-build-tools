@@ -1,19 +1,26 @@
 #!/bin/bash
 
-repo init -u https://github.com/Tomoms/android.git -b 16 --git-lfs
+repo init -u https://github.com/Tomoms/android.git -b 16.2 --git-lfs
 /opt/crave/resync.sh
 
-git clone https://github.com/iamCloverDT/android_device_motorola_guam.git -b lineage-23.1 device/motorola/guam
-git clone https://github.com/Tomoms/android_device_motorola_sm6225-common.git -b 16.1 device/motorola/sm6225-common
-git clone https://github.com/StarlightKernel/starlight-motoSM6225.git -b lineage-23.1-rom-build kernel/motorola/sm6225
-git clone https://github.com/TheMuppets/proprietary_vendor_motorola_sm6225-common.git -b lineage-23.1 vendor/motorola/sm6225-common
-git clone https://github.com/TheMuppets/proprietary_vendor_motorola_guam.git -b lineage-23.1 vendor/motorola/guam
-git clone https://github.com/LineageOS/android_hardware_motorola.git -b lineage-23.1 hardware/motorola
+rm -rf device/motorola/guam
+rm -rf device/motorola/sm6225-common
+rm -rf kernel/motorola/sm6225
+rm -rf vendor/motorola/sm6225-common
+rm -rf vendor/motorola/guam
+rm -rf hardware/motorola
+
+git clone https://github.com/iamCloverDT/android_device_motorola_guam.git -b lineage-23.2 device/motorola/guam
+git clone https://github.com/iamCloverDT/android_device_motorola_sm6225-common.git -b lineage-23.2 device/motorola/sm6225-common
+git clone --recursive https://github.com/StarlightKernel/starlight-motoSM6225.git -b lineage-23.2 kernel/motorola/sm6225
+git clone https://github.com/TheMuppets/proprietary_vendor_motorola_sm6225-common.git -b lineage-23.2 vendor/motorola/sm6225-common
+git clone https://github.com/TheMuppets/proprietary_vendor_motorola_guam.git -b lineage-23.2 vendor/motorola/guam
+git clone https://github.com/LineageOS/android_hardware_motorola.git -b lineage-23.2 hardware/motorola
 
 rm -rf out/target
 
 . build/env*
 
 export TZ=America/Recife
-lunch lineage_guam-bp3a-userdebug
+lunch lineage_guam-bp4a-userdebug
 mka bacon
