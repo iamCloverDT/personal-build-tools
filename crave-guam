@@ -26,8 +26,8 @@ git clone https://github.com/LineageOS/android_hardware_motorola.git -b lineage-
 
 # Create signing keys from EvoX template
 git clone https://github.com/Evolution-X/vendor_evolution-priv_keys-template vendor/lineage-priv/keys --depth 1
-chmod +x vendor/evolution-priv/keys/keys.sh
-pushd vendor/evolution-priv/keys
+chmod +x vendor/lineage-priv/keys/keys.sh
+pushd vendor/lineage-priv/keys
 ./keys.sh
 popd
 
