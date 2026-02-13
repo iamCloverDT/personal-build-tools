@@ -3,24 +3,48 @@
 repo init -u https://github.com/LineageOS/android.git -b lineage-22.2 --git-lfs
 /opt/crave/resync.sh
 
+# Delete previous sources
+echo "Deleting previous sources..."
 rm -rf device/motorola/guam
 rm -rf device/motorola/sm6225-common
 rm -rf kernel/motorola/sm6225
 rm -rf vendor/motorola/sm6225-common
 rm -rf vendor/motorola/guam
 rm -rf hardware/motorola
+rm -rf vendor/lineage-priv/keys
 
+# Device sources
 git clone https://github.com/iamCloverDT/android_device_motorola_guam.git -b lineage-22.2 device/motorola/guam
 git clone https://github.com/iamCloverDT/android_device_motorola_sm6225-common.git -b lineage-22.2 device/motorola/sm6225-common
-git clone --recursive https://github.com/StarlightKernel/starlight-motoSM6225.git -b lineage-23.2 kernel/motorola/sm6225
+# Kernel source
+git clone --recursive https://github.com/iamCloverDT/android_kernel_motorola_sm6225.git -b v kernel/motorola/sm6225
+# Vendor sources
 git clone https://github.com/TheMuppets/proprietary_vendor_motorola_sm6225-common.git -b lineage-22.2 vendor/motorola/sm6225-common
 git clone https://github.com/TheMuppets/proprietary_vendor_motorola_guam.git -b lineage-22.2 vendor/motorola/guam
+# Hardware source
 git clone https://github.com/LineageOS/android_hardware_motorola.git -b lineage-22.2 hardware/motorola
+
+# Create signing keys from EvoX template
+git clone https://github.com/Evolution-X/vendor_evolution-priv_keys-template vendor/lineage-priv/keys --depth 1
+chmod +x vendor/evolution-priv/keys/keys.sh
+pushd vendor/evolution-priv/keys
+./keys.sh
+popd
 
 rm -rf out/target
 
-. build/env*
+. build/envsetup.sh
 
+# Export some build flags
 export TZ=America/Recife
-lunch lineage_guam-bp4a-userdebug
+export BUILD_USERNAME=clover
+export BUILD_HOSTNAME=crave
+# Lunch target selection
+echo "Selecting target with lunch.."
+lunch lineage_guam-bp1a-userdebug
+echo "Lunch target selected."
+# Building the ROM
+echo "========================="
+echo "Starting ROM Compilation..."
+echo "========================="
 mka bacon
