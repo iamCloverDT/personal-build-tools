@@ -17,7 +17,7 @@ rm -rf vendor/lineage-priv/keys
 git clone https://github.com/iamCloverDT/android_device_motorola_guam.git -b lineage-22.2 device/motorola/guam
 git clone https://github.com/iamCloverDT/android_device_motorola_sm6225-common.git -b lineage-22.2 device/motorola/sm6225-common
 # Kernel source
-git clone --recursive https://github.com/iamCloverDT/android_kernel_motorola_sm6225.git -b v kernel/motorola/sm6225
+git clone --recursive https://github.com/StarlightKernel/starlight-motorolaSM6225.git -b lineage-22.2-rom kernel/motorola/sm6225
 # Vendor sources
 git clone https://github.com/TheMuppets/proprietary_vendor_motorola_sm6225-common.git -b lineage-22.2 vendor/motorola/sm6225-common
 git clone https://github.com/TheMuppets/proprietary_vendor_motorola_guam.git -b lineage-22.2 vendor/motorola/guam
