@@ -17,7 +17,7 @@ rm -rf device/xiaomi/tanzanite
 # rm -rf vendor/lineage-priv/keys
 
 # Device source
-git clone https://github.com/nathanzerogarage/android_device_xiaomi_tanzanite -b lineage-22.2 device/xiaomi/tanzanite
+git clone https://github.com/iamCloverDT/android_device_xiaomi_tanzanite -b lineage-22.2 device/xiaomi/tanzanite
 # Prebuilt kernel source
 # git clone https://github.com/nathanzerogarage/android_device_xiaomi_tanzanite-kernel -b vanilla device/xiaomi/tanzanite-kernel
 # Vendor source
