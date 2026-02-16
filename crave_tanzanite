@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# repo init -u https://github.com/LineageOS/android.git -b lineage-22.2 --git-lfs --no-clone-bundle
-# /opt/crave/resync.sh
+repo init -u https://github.com/LineageOS/android.git -b lineage-22.2 --git-lfs --no-clone-bundle
+/opt/crave/resync.sh
 
 # Delete previous sources
 echo "Deleting previous sources..."
@@ -13,7 +13,7 @@ rm -rf hardware/xiaomi
 rm -rf hardware/mediatek
 rm -rf device/mediatek/sepolicy_vndr
 rm -rf vendor/mediatek/ims
-rm -rf vendor/*priv*
+# rm -rf vendor/*priv*
 rm -rf vendor/lineage-priv/keys
 
 # Device source
