@@ -36,10 +36,10 @@ mkdir ~/.android-certs
 for x in releasekey platform shared media networkstack testkey bluetooth sdk_sandbox verifiedboot nfc; do \
     ./development/tools/make_key ~/.android-certs/$x "$subject"; \
 done
-mkdir vendor/lineage-priv
-mv ~/.android-certs vendor/lineage-priv/keys
-echo "PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/lineage-priv/keys/releasekey" > vendor/lineage-priv/keys/keys.mk
-pushd vendor/lineage-priv/keys
+mkdir vendor/private
+mv ~/.android-certs vendor/private/keys
+echo "PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/private/keys/releasekey" > vendor/private/keys/keys.mk
+pushd vendor/private/keys
 wget https://raw.githubusercontent.com/iamCloverDT/personal-build-tools/refs/heads/main/signing/BUILD.bazel
 popd
 
