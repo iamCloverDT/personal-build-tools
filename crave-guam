@@ -25,11 +25,17 @@ git clone https://github.com/TheMuppets/proprietary_vendor_motorola_guam.git -b 
 # Hardware source
 git clone https://github.com/LineageOS/android_hardware_motorola.git -b lineage-22.2 hardware/motorola
 
-# Create signing keys from EvoX template
-git clone https://github.com/iamCloverDT/vendor_lineage-priv_keys-template vendor/lineage-priv/keys --depth 1
-chmod +x vendor/lineage-priv/keys/keys.sh
-pushd vendor/lineage-priv/keys
-./keys.sh
+# Create signing keys
+subject='/C=BR/ST=Pernambuco/L=Petrolina/O=Starlight/OU=AndroidKernel/CN=Android/emailAddress=clover@tutamail.com'
+mkdir ~/.android-certs
+for x in releasekey platform shared media networkstack testkey bluetooth sdk_sandbox verifiedboot nfc; do \
+    ./development/tools/make_key ~/.android-certs/$x "$subject"; \
+done
+mkdir vendor/private
+mv ~/.android-certs vendor/private/keys
+echo "PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/private/keys/releasekey" > vendor/private/keys/keys.mk
+pushd vendor/private/keys
+wget https://raw.githubusercontent.com/iamCloverDT/personal-build-tools/refs/heads/main/signing/BUILD.bazel
 popd
 
 rm -rf out/target
