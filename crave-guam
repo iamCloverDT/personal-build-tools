@@ -24,6 +24,7 @@ git clone https://github.com/TheMuppets/proprietary_vendor_motorola_sm6225-commo
 git clone https://github.com/TheMuppets/proprietary_vendor_motorola_guam.git -b lineage-22.2 vendor/motorola/guam
 # Hardware source
 git clone https://github.com/LineageOS/android_hardware_motorola.git -b lineage-22.2 hardware/motorola
+git clone https://github.com/AxionAOSP/android_packages_apps_ViPER4AndroidFX.git -b lineage-23.1 packages/apps/ViPER4AndroidFX
 
 # Create signing keys
 subject='/C=BR/ST=Pernambuco/L=Petrolina/O=Starlight/OU=AndroidKernel/CN=Android/emailAddress=clover@tutamail.com'
