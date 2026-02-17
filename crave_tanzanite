@@ -25,10 +25,10 @@ git clone https://github.com/nathanzerogarage/proprietary_vendor_xiaomi_tanzanit
 # ViPER4AndroidFX sources
 git clone https://github.com/TogoFire/packages_apps_ViPER4AndroidFX.git -b v4a packages/apps/ViPER4AndroidFX
 # Hardware sources
-git clone https://github.com/aerichandesu0011/android_hardware_xiaomi -b lineage-22.2 hardware/xiaomi
-git clone https://github.com/aerichandesu0011/android_hardware_mediatek -b lineage-22.2 hardware/mediatek
-git clone https://github.com/aerichandesu0011/android_device_mediatek_sepolicy_vndr -b lineage-22.2 device/mediatek/sepolicy_vndr
-git clone https://github.com/MillenniumOSS/android_vendor_mediatek_ims.git -b sixteen-qpr2 vendor/mediatek/ims
+git clone https://github.com/nathanzerogarage/android_hardware_xiaomi -b lineage-23.1 hardware/xiaomi
+git clone https://github.com/nathanzerogarage/android_hardware_mediatek -b lineage-23.1 hardware/mediatek
+git clone https://github.com/nathanzerogarage/android_device_mediatek_sepolicy_vndr -b lineage-23.1 device/mediatek/sepolicy_vndr
+# git clone https://github.com/MillenniumOSS/android_vendor_mediatek_ims.git -b sixteen-qpr2 vendor/mediatek/ims
 
 # Create signing keys
 subject='/C=BR/ST=Pernambuco/L=Petrolina/O=Starlight/OU=AndroidKernel/CN=Android/emailAddress=clover@tutamail.com'
