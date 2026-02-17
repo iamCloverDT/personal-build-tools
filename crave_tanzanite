@@ -53,7 +53,7 @@ popd
 # patch -p1 < 01-aperture-mtk-hfps-mode.patch
 # popd
 
-rm -rf out/target
+rm -rf out
 
 . build/envsetup.sh
 
