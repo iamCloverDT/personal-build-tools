@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# repo init -u https://github.com/LineageOS/android.git -b lineage-22.2 --git-lfs --no-clone-bundle
-# /opt/crave/resync.sh
+repo init -u https://github.com/LineageOS/android.git -b lineage-22.2 --git-lfs --no-clone-bundle
+/opt/crave/resync.sh
 
 # Delete previous sources
 echo "Deleting previous sources..."
@@ -43,15 +43,15 @@ pushd vendor/private/keys
 wget https://raw.githubusercontent.com/iamCloverDT/personal-build-tools/refs/heads/main/signing/BUILD.bazel
 popd
 
-# pushd external/wpa_supplicant_8
-# wget https://raw.githubusercontent.com/nathanzerogarage/patches/refs/heads/main/do_not_set_NL80211_WPA_VERSION_3.patch
-# patch -p1 < do_not_set_NL80211_WPA_VERSION_3.patch
-# popd
+pushd external/wpa_supplicant_8
+wget https://raw.githubusercontent.com/nathanzerogarage/patches/refs/heads/main/do_not_set_NL80211_WPA_VERSION_3.patch
+patch -p1 < do_not_set_NL80211_WPA_VERSION_3.patch
+popd
 
-# pushd packages/apps/Aperture
-# wget https://raw.githubusercontent.com/nathanzerogarage/patches/refs/heads/main/01-aperture-mtk-hfps-mode.patch
-# patch -p1 < 01-aperture-mtk-hfps-mode.patch
-# popd
+pushd packages/apps/Aperture
+wget https://raw.githubusercontent.com/nathanzerogarage/patches/refs/heads/main/01-aperture-mtk-hfps-mode.patch
+patch -p1 < 01-aperture-mtk-hfps-mode.patch
+popd
 
 rm -rf out
 
