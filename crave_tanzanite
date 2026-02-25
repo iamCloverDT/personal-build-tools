@@ -1,6 +1,7 @@
 #!/bin/bash
 
-repo init -u https://github.com/crdroidandroid/android.git -b lineage-22.2 --git-lfs --no-clone-bundle
+repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --git-lfs --no-clone-bundle
+git clone https://github.com/iamCloverDT/tanzanite_local_manifests.git --depth=1 -b lineage-23.2 .repo/local_manifests
 /opt/crave/resync.sh
 
 # Delete previous sources
@@ -15,20 +16,6 @@ rm -rf device/mediatek/sepolicy_vndr
 rm -rf vendor/mediatek/ims
 # rm -rf vendor/*priv*
 rm -rf vendor/lineage-priv/keys
-
-# Device source
-git clone https://github.com/iamCloverDT/android_device_xiaomi_tanzanite -b lineage-23.2 device/xiaomi/tanzanite
-# Prebuilt kernel source
-git clone https://github.com/iamCloverDT/android_device_xiaomi_tanzanite-kernel -b ksu device/xiaomi/tanzanite-kernel
-# Vendor source
-git clone https://github.com/nathanzerogarage/proprietary_vendor_xiaomi_tanzanite -b sixteen-qpr2 vendor/xiaomi/tanzanite
-# ViPER4AndroidFX sources
-git clone https://github.com/TogoFire/packages_apps_ViPER4AndroidFX.git -b v4a packages/apps/ViPER4AndroidFX
-# Hardware sources
-git clone https://github.com/nathanzerogarage/android_hardware_xiaomi -b lineage-23.2 hardware/xiaomi
-git clone https://github.com/nathanzerogarage/android_hardware_mediatek -b lineage-23.2 hardware/mediatek
-git clone https://github.com/nathanzerogarage/android_device_mediatek_sepolicy_vndr -b lineage-23.2 device/mediatek/sepolicy_vndr
-git clone https://github.com/MillenniumOSS/android_vendor_mediatek_ims.git -b sixteen-qpr2 vendor/mediatek/ims
 
 echo "Patching wpa_supplicant_8..."
 pushd external/wpa_supplicant_8
