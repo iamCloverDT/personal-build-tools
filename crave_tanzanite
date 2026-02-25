@@ -17,6 +17,13 @@ rm -rf vendor/mediatek/ims
 # rm -rf vendor/*priv*
 rm -rf vendor/lineage-priv/keys
 
+echo "Creating signing keys.."
+wget https://raw.githubusercontent.com/crdroidandroid/crDroid-build-signed-script/refs/heads/16.0/create-signed-env.sh
+wget https://raw.githubusercontent.com/crdroidandroid/crDroid-build-signed-script/refs/heads/16.0/keys.mk
+chmod +x create-signed-env.sh
+./create-signed-env.sh
+echo "Finished creating signing keys."
+
 echo "Patching wpa_supplicant_8..."
 pushd external/wpa_supplicant_8
 wget https://raw.githubusercontent.com/nathanzerogarage/patches/refs/heads/main/do_not_set_NL80211_WPA_VERSION_3.patch
