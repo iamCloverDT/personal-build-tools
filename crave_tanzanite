@@ -12,6 +12,7 @@ rm -rf device/mediatek/sepolicy_vndr
 rm -rf vendor/mediatek/ims
 # rm -rf vendor/*priv*
 rm -rf vendor/lineage-priv/keys
+rm -rf .repo/local_manifests
 
 repo init -u https://github.com/crdroidandroid/android.git -b 16.0 --git-lfs --no-clone-bundle
 git clone https://github.com/iamCloverDT/tanzanite_local_manifests.git --depth=1 -b lineage-23.2 .repo/local_manifests
