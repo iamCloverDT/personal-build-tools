@@ -19,6 +19,8 @@ git clone https://github.com/iamCloverDT/tanzanite_local_manifests.git --depth=1
 /opt/crave/resync.sh
 
 echo "Creating signing keys.."
+rm create-signed-env.sh
+rm keys.mk
 wget https://raw.githubusercontent.com/crdroidandroid/crDroid-build-signed-script/refs/heads/16.0/create-signed-env.sh
 wget https://raw.githubusercontent.com/crdroidandroid/crDroid-build-signed-script/refs/heads/16.0/keys.mk
 chmod +x create-signed-env.sh
