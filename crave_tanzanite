@@ -27,18 +27,18 @@ chmod +x create-signed-env.sh
 ./create-signed-env.sh
 echo "Finished creating signing keys."
 
-echo "Patching wpa_supplicant_8..."
-pushd external/wpa_supplicant_8
-wget https://raw.githubusercontent.com/nathanzerogarage/patches/refs/heads/main/do_not_set_NL80211_WPA_VERSION_3.patch
-patch -p1 < do_not_set_NL80211_WPA_VERSION_3.patch
-popd
-echo "wpa_supplicant_8 was patched."
+# echo "Patching wpa_supplicant_8..."
+# pushd external/wpa_supplicant_8
+# wget https://raw.githubusercontent.com/nathanzerogarage/patches/refs/heads/main/do_not_set_NL80211_WPA_VERSION_3.patch
+# patch -p1 < do_not_set_NL80211_WPA_VERSION_3.patch
+# popd
+# echo "wpa_supplicant_8 was patched."
 
-echo "Patching Apeture..."
-pushd packages/apps/Aperture
-wget https://raw.githubusercontent.com/nathanzerogarage/patches/refs/heads/main/01-aperture-mtk-hfps-mode.patch
-patch -p1 < 01-aperture-mtk-hfps-mode.patch
-popd
+# echo "Patching Apeture..."
+# pushd packages/apps/Aperture
+# wget https://raw.githubusercontent.com/nathanzerogarage/patches/refs/heads/main/01-aperture-mtk-hfps-mode.patch
+# patch -p1 < 01-aperture-mtk-hfps-mode.patch
+# popd
 echo "Aperture was patched."
 
 rm -rf out
