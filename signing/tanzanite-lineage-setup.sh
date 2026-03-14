@@ -1,4 +1,4 @@
-git clone https://github.com/DeltaOSS/tanzanite_local_manifests.git -b lineage-23.2 .repo/local_manifests
+git clone https://github.com/DeltaOSS/local_manifests_tanzanite.git -b lineage-23.2 .repo/local_manifests
 repo sync
 
 rm -rf external/wpa_supplicant_8
